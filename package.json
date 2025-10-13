@@ -1,0 +1,16 @@
+{
+  "name": "spry",
+  "version": "1.0.0",
+  "description": "Spry is an open-source, AI-native platform built on Frappe that combines workflow automation, AI content generation, CMS management, and ecommerce tools in one unified ecosystem.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd frontend && yarn install",
+    "dev": "cd frontend && yarn dev",
+    "build": "cd frontend && yarn build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

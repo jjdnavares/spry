@@ -1,0 +1,1 @@
+import{_ as o,b as t,h as n,d as s,r as a,o as r}from"./vendor.js";const c={name:"FlowAutomationIndex"},_={class:"min-h-screen bg-gray-50"},d={class:"container mx-auto px-6 py-8"};function i(p,m,l,u,x,f){const e=a("router-view");return r(),t("div",_,[n("main",d,[s(e)])])}var h=o(c,[["render",i]]);export{h as default};

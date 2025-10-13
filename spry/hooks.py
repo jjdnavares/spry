@@ -11,15 +11,15 @@ app_license = "agpl-3.0"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "spry",
-# 		"logo": "/assets/spry/logo.png",
-# 		"title": "Spry",
-# 		"route": "/spry",
-# 		"has_permission": "spry.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+    {
+        "name": "flow_automation",
+        "logo": "/assets/spry/images/flow-automation-icon.svg",
+        "title": "Spry",
+        "route": "/app",
+        "has_permission": "spry.flow_automation.api.permission.has_workflow_permission"
+    }
+]
 
 # Includes in <head>
 # ------------------
@@ -27,6 +27,10 @@ app_license = "agpl-3.0"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/spry/css/spry.css"
 # app_include_js = "/assets/spry/js/spry.js"
+# include js, css files in header of desk.html
+app_include_js = [
+    "/assets/spry/js/flow_automation.js"
+]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/spry/css/spry.css"
@@ -160,6 +164,14 @@ app_license = "agpl-3.0"
 # 		"spry.tasks.monthly"
 # 	],
 # }
+scheduler_events = {
+    "all": [
+        "spry.flow_automation.tasks.check_scheduled_workflows"
+    ],
+    "daily": [
+        "spry.flow_automation.tasks.cleanup_old_workflow_executions"
+    ],
+}
 
 # Testing
 # -------
@@ -245,3 +257,6 @@ app_license = "agpl-3.0"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+website_route_rules = [
+    {'from_route': '/flow-automation/<path:app_path>', 'to_route': 'flow_automation'}
+]

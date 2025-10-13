@@ -1,0 +1,20 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#gradient1)"/>
+  
+  <!-- Lightning bolt representing speed and automation -->
+  <path d="M120 40L70 100H100L80 160L130 100H100L120 40Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+  
+  <!-- Flow lines representing workflow -->
+  <path d="M40 80C50 80 50 70 60 70" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <path d="M140 130C150 130 150 140 160 140" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <path d="M35 120C45 120 45 125 55 125" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

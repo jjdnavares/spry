@@ -1,0 +1,66 @@
+{
+  "workflow_name": "HTTP Request Example",
+  "description": "A simple workflow that makes an HTTP request to an API and processes the response",
+  "nodes": {
+    "trigger": {
+      "id": "trigger",
+      "name": "Start",
+      "type": "trigger",
+      "position": {
+        "x": 100,
+        "y": 200
+      },
+      "parameters": {
+        "triggerType": "manual"
+      }
+    },
+    "httpRequest": {
+      "id": "httpRequest",
+      "name": "Get User Data",
+      "type": "http",
+      "position": {
+        "x": 400,
+        "y": 200
+      },
+      "parameters": {
+        "method": "GET",
+        "url": "https://jsonplaceholder.typicode.com/users/1",
+        "headers": {},
+        "responseType": "json"
+      }
+    },
+    "transformData": {
+      "id": "transformData",
+      "name": "Extract User Info",
+      "type": "function",
+      "position": {
+        "x": 700,
+        "y": 200
+      },
+      "parameters": {
+        "functionCode": "// Extract relevant user information\nconst response = input.body;\n\nreturn {\n  name: response.name,\n  email: response.email,\n  company: response.company.name,\n  city: response.address.city\n};",
+        "language": "javascript"
+      }
+    }
+  },
+  "connections": {
+    "trigger": [
+      {
+        "node": "httpRequest",
+        "input": "main",
+        "output": "main"
+      }
+    ],
+    "httpRequest": [
+      {
+        "node": "transformData",
+        "input": "main",
+        "output": "main"
+      }
+    ]
+  },
+  "settings": {
+    "errorWorkflow": null,
+    "timezone": "UTC"
+  }
+}

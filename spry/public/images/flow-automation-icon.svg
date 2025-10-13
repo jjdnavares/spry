@@ -1,0 +1,28 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="url(#flowGradient)"/>
+  
+  <!-- Flow nodes -->
+  <circle cx="20" cy="20" r="5" fill="white" opacity="0.9"/>
+  <circle cx="44" cy="20" r="5" fill="white" opacity="0.9"/>
+  <circle cx="32" cy="44" r="5" fill="white" opacity="0.9"/>
+  
+  <!-- Connection lines with arrows -->
+  <path d="M24 22L40 22" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+  <path d="M22 24L30 40" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+  <path d="M42 24L34 40" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+  
+  <!-- Arrow heads -->
+  <path d="M38 22L40 20L42 22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <path d="M30 38L32 40L34 38" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  
+  <!-- Lightning bolt accent -->
+  <path d="M50 12L46 18H48L44 24" stroke="white" stroke-width="2" stroke-linejoin="round" opacity="0.7"/>
+  
+  <defs>
+    <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

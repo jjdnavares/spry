@@ -1,0 +1,137 @@
+{
+  "workflow_name": "Data Transformation Example",
+  "description": "A workflow that demonstrates data transformation operations",
+  "nodes": {
+    "trigger": {
+      "id": "trigger",
+      "name": "Start",
+      "type": "trigger",
+      "position": {
+        "x": 100,
+        "y": 200
+      },
+      "parameters": {
+        "triggerType": "manual",
+        "data": {
+          "items": [
+            {"id": 1, "name": "Product A", "price": 100, "category": "Electronics"},
+            {"id": 2, "name": "Product B", "price": 50, "category": "Books"},
+            {"id": 3, "name": "Product C", "price": 200, "category": "Electronics"},
+            {"id": 4, "name": "Product D", "price": 80, "category": "Books"}
+          ]
+        }
+      }
+    },
+    "filterElectronics": {
+      "id": "filterElectronics",
+      "name": "Filter Electronics",
+      "type": "function",
+      "position": {
+        "x": 400,
+        "y": 100
+      },
+      "parameters": {
+        "functionCode": "// Filter electronics products\nconst items = input.items || [];\n\nreturn {\n  items: items.filter(item => item.category === 'Electronics')\n};",
+        "language": "javascript"
+      }
+    },
+    "filterBooks": {
+      "id": "filterBooks",
+      "name": "Filter Books",
+      "type": "function",
+      "position": {
+        "x": 400,
+        "y": 300
+      },
+      "parameters": {
+        "functionCode": "// Filter book products\nconst items = input.items || [];\n\nreturn {\n  items: items.filter(item => item.category === 'Books')\n};",
+        "language": "javascript"
+      }
+    },
+    "calculateElectronicsTotal": {
+      "id": "calculateElectronicsTotal",
+      "name": "Calculate Electronics Total",
+      "type": "function",
+      "position": {
+        "x": 700,
+        "y": 100
+      },
+      "parameters": {
+        "functionCode": "// Calculate total price for electronics\nconst items = input.items || [];\nconst total = items.reduce((sum, item) => sum + item.price, 0);\n\nreturn {\n  category: 'Electronics',\n  count: items.length,\n  total: total\n};",
+        "language": "javascript"
+      }
+    },
+    "calculateBooksTotal": {
+      "id": "calculateBooksTotal",
+      "name": "Calculate Books Total",
+      "type": "function",
+      "position": {
+        "x": 700,
+        "y": 300
+      },
+      "parameters": {
+        "functionCode": "// Calculate total price for books\nconst items = input.items || [];\nconst total = items.reduce((sum, item) => sum + item.price, 0);\n\nreturn {\n  category: 'Books',\n  count: items.length,\n  total: total\n};",
+        "language": "javascript"
+      }
+    },
+    "combineTotals": {
+      "id": "combineTotals",
+      "name": "Combine Results",
+      "type": "function",
+      "position": {
+        "x": 1000,
+        "y": 200
+      },
+      "parameters": {
+        "functionCode": "// Combine results from both branches\nreturn {\n  summary: [\n    input[0],\n    input[1]\n  ],\n  grandTotal: input[0].total + input[1].total\n};",
+        "language": "javascript"
+      }
+    }
+  },
+  "connections": {
+    "trigger": [
+      {
+        "node": "filterElectronics",
+        "input": "main",
+        "output": "main"
+      },
+      {
+        "node": "filterBooks",
+        "input": "main",
+        "output": "main"
+      }
+    ],
+    "filterElectronics": [
+      {
+        "node": "calculateElectronicsTotal",
+        "input": "main",
+        "output": "main"
+      }
+    ],
+    "filterBooks": [
+      {
+        "node": "calculateBooksTotal",
+        "input": "main",
+        "output": "main"
+      }
+    ],
+    "calculateElectronicsTotal": [
+      {
+        "node": "combineTotals",
+        "input": "main",
+        "output": "main"
+      }
+    ],
+    "calculateBooksTotal": [
+      {
+        "node": "combineTotals",
+        "input": "main",
+        "output": "main"
+      }
+    ]
+  },
+  "settings": {
+    "errorWorkflow": null,
+    "timezone": "UTC"
+  }
+}
