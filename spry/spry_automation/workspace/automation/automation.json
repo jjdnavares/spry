@@ -1,0 +1,119 @@
+{
+ "app": "spry",
+ "charts": [],
+ "content": "[{\"id\":\"automation_shortcuts\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Workflow\",\"col\":3}},{\"id\":\"automation_shortcuts2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Credentials\",\"col\":3}}]",
+ "creation": "2025-01-15 03:40:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "workflow",
+ "idx": 1,
+ "is_hidden": 0,
+ "label": "Automation",
+ "links": [
+  {
+   "description": "Workflow automation and orchestration",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Workflows",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Workflow",
+   "link_count": 0,
+   "link_to": "Workflow",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Workflow Execution",
+   "link_count": 0,
+   "link_to": "Workflow Execution",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "description": "Manage credentials for external services",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Credentials",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Credential",
+   "link_count": 0,
+   "link_to": "Credential",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "description": "Advanced workflow builder",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Flow Automation",
+   "link_count": 1,
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Flow Automation",
+   "link_count": 0,
+   "link_to": "/flow-automation",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-01-15 03:40:00.000000",
+ "modified_by": "Administrator",
+ "module": "Spry Automation",
+ "name": "Automation",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Workflow",
+   "link_to": "Workflow",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Credentials",
+   "link_to": "Credential",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Automation",
+ "type": "Workspace"
+}

@@ -2,7 +2,43 @@
 
 Spry is an open-source, AI-native platform built on Frappe that combines workflow automation, AI content generation, CMS management, and ecommerce tools in one unified ecosystem.
 
-### Installation
+## Modules
+
+Spry is organized into multiple modules, each providing specific functionality:
+
+### 1. **Spry Automation**
+Visual workflow automation with AI-powered nodes. Create, manage, and execute automated workflows with a drag-and-drop interface.
+
+**Key Features:**
+- Visual workflow editor
+- Node-based architecture (HTTP, Function, Data Transform)
+- Credential management
+- Execution history and monitoring
+- Scheduled workflows
+
+### 2. **Writer**
+AI-powered content generation and writing assistance.
+
+**Key Features:**
+- AI content generation
+- Content templates and workflows
+- Multi-format content support
+- Content versioning and collaboration
+- SEO optimization tools
+
+### 3. **CMS**
+Comprehensive content management system for websites and digital content.
+
+**Key Features:**
+- Website and page management
+- Dynamic content blocks
+- Media library and asset management
+- Theme and template system
+- SEO and metadata management
+- Multi-site support
+- Content publishing workflows
+
+## Installation
 
 You can install this app using the [bench](https://github.com/frappe/bench) CLI:
 

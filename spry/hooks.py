@@ -13,12 +13,26 @@ app_license = "agpl-3.0"
 # Each item in the list will be shown as an app in the apps page
 add_to_apps_screen = [
     {
-        "name": "flow_automation",
+        "name": "spry_automation",
         "logo": "/assets/spry/images/flow-automation-icon.svg",
-        "title": "Spry",
-        "route": "/app",
-        "has_permission": "spry.flow_automation.api.permission.has_workflow_permission"
-    }
+        "title": "Spry Automation",
+        "route": "/app/",
+        "has_permission": "spry.spry_automation.api.permission.has_workflow_permission"
+    },
+    # {
+    #     "name": "writer",
+    #     "logo": "/assets/spry/images/writer-icon.svg",
+    #     "title": "Writer",
+    #     "route": "/writer",
+    #     "has_permission": "spry.writer.api.permission.has_writer_permission"
+    # },
+    # {
+    #     "name": "cms",
+    #     "logo": "/assets/spry/images/cms-icon.svg",
+    #     "title": "CMS",
+    #     "route": "/cms",
+    #     # "has_permission": "spry.cms.api.permission.has_cms_permission"
+    # }
 ]
 
 # Includes in <head>
@@ -166,10 +180,10 @@ app_include_js = [
 # }
 scheduler_events = {
     "all": [
-        "spry.flow_automation.tasks.check_scheduled_workflows"
+        "spry.spry_automation.tasks.check_scheduled_workflows"
     ],
     "daily": [
-        "spry.flow_automation.tasks.cleanup_old_workflow_executions"
+        "spry.spry_automation.tasks.cleanup_old_workflow_executions"
     ],
 }
 
@@ -258,5 +272,6 @@ scheduler_events = {
 # }
 
 website_route_rules = [
-    {'from_route': '/flow-automation/<path:app_path>', 'to_route': 'flow_automation'}
+    {'from_route': '/flow-automation/<path:app_path>', 'to_route': 'flow-automation/index'},
+    {'from_route': '/writer/<path:app_path>', 'to_route': 'writer'},
 ]

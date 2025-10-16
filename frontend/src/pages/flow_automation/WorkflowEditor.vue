@@ -688,6 +688,7 @@
 <script>
 import { ref, onMounted, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { apiCall } from '../../utils/api'
 
 export default {
   name: 'WorkflowEditor',
@@ -1122,10 +1123,10 @@ export default {
           connections: JSON.stringify(connections.value)
         }
 
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.workflow.save_workflow',
-          args: { data: workflowData }
-        })
+        const response = await apiCall(
+          'spry.spry_automation.api.workflow.save_workflow',
+          { data: workflowData }
+        )
 
         if (response.message) {
           alert('Workflow saved successfully')
@@ -1139,7 +1140,8 @@ export default {
         }
       } catch (error) {
         console.error('Error saving workflow:', error)
-        alert('Failed to save workflow')
+        const errorMessage = error?.message || error?._server_messages || error?.exc || 'Unknown error'
+        alert(`Failed to save workflow: ${errorMessage}`)
       } finally {
         saving.value = false
       }
@@ -1176,13 +1178,13 @@ export default {
       
       try {
         testing.value = true
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.node_types.test_node',
-          args: {
+        const response = await apiCall(
+          'spry.spry_automation.api.node_types.test_node',
+          {
             node_type: selectedNode.value.type,
             config: selectedNode.value.config
           }
-        })
+        )
         
         if (response.message) {
           if (response.message.success) {
@@ -1209,9 +1211,9 @@ export default {
 
     const fetchCredentials = async () => {
       try {
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.credential.get_credential_list'
-        })
+        const response = await apiCall(
+          'spry.spry_automation.api.credential.get_credential_list'
+        )
         availableCredentials.value = response.message || []
       } catch (error) {
         console.error('Error fetching credentials:', error)
@@ -1225,10 +1227,10 @@ export default {
       }
 
       try {
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.workflow.get_workflow',
-          args: { name: workflowId.value }
-        })
+        const response = await apiCall(
+          'spry.spry_automation.api.workflow.get_workflow',
+          { name: workflowId.value }
+        )
 
         if (response.message) {
           const workflow = response.message

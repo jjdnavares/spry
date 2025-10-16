@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:workflow",
+ "creation": "2025-10-13 14:45:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "workflow",
+  "section_break_2",
+  "total_executions",
+  "success_count",
+  "error_count",
+  "column_break_6",
+  "last_execution",
+  "average_runtime",
+  "total_runtime",
+  "section_break_10",
+  "production_executions_7d",
+  "failed_executions_7d",
+  "failure_rate",
+  "time_saved"
+ ],
+ "fields": [
+  {
+   "fieldname": "workflow",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Workflow",
+   "options": "Workflow",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Execution Statistics"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_executions",
+   "fieldtype": "Int",
+   "label": "Total Executions"
+  },
+  {
+   "default": "0",
+   "fieldname": "success_count",
+   "fieldtype": "Int",
+   "label": "Success Count"
+  },
+  {
+   "default": "0",
+   "fieldname": "error_count",
+   "fieldtype": "Int",
+   "label": "Error Count"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_execution",
+   "fieldtype": "Datetime",
+   "label": "Last Execution"
+  },
+  {
+   "fieldname": "average_runtime",
+   "fieldtype": "Float",
+   "label": "Average Runtime (seconds)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_runtime",
+   "fieldtype": "Float",
+   "label": "Total Runtime (seconds)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "7-Day Statistics"
+  },
+  {
+   "default": "0",
+   "fieldname": "production_executions_7d",
+   "fieldtype": "Int",
+   "label": "Production Executions (7d)"
+  },
+  {
+   "default": "0",
+   "fieldname": "failed_executions_7d",
+   "fieldtype": "Int",
+   "label": "Failed Executions (7d)"
+  },
+  {
+   "fieldname": "failure_rate",
+   "fieldtype": "Percent",
+   "label": "Failure Rate"
+  },
+  {
+   "fieldname": "time_saved",
+   "fieldtype": "Data",
+   "label": "Time Saved",
+   "description": "Estimated time saved (e.g., '2h 30m')"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-13 14:45:00.000000",
+ "modified_by": "Administrator",
+ "module": "Spry Automation",
+ "name": "Workflow Statistics",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

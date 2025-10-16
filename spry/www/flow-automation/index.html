@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/assets/spry/images/flow-automation-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flow Automation - Spry</title>
-    <link rel="icon" href="/assets/spry/frontend/favicon.png">
-    <script>window.csrf_token = "{{ csrf_token }}";</script>
-</head>
-<body>
+    <link rel="stylesheet" href="/assets/spry/frontend/assets/index.css" />
+  </head>
+  <body>
     <div id="app"></div>
     <div id="modals"></div>
     <div id="popovers"></div>
-    <script type="module" src="/assets/spry/frontend/assets/index.js"></script>
-</body>
+
+    <script> window.csrf_token = '{{ csrf_token }}'; </script>
+    <script type="module" src="/assets/spry/frontend/main.js"></script>
+  </body>
 </html>

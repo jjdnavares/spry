@@ -91,6 +91,7 @@
 <script>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { apiCall } from '../../utils/api'
 
 export default {
   name: 'CredentialList',
@@ -102,9 +103,9 @@ export default {
     const fetchCredentials = async () => {
       try {
         loading.value = true
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.credential.get_credential_list'
-        })
+        const response = await apiCall(
+          'spry.spry_automation.api.credential.get_credential_list'
+        )
         credentials.value = response.message || []
       } catch (error) {
         console.error('Error fetching credentials:', error)
@@ -133,10 +134,10 @@ export default {
       }
       
       try {
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.credential.delete_credential',
-          args: { name: credential.name }
-        })
+        const response = await apiCall(
+          'spry.spry_automation.api.credential.delete_credential',
+          { name: credential.name }
+        )
         
         if (response.message && response.message.success) {
           fetchCredentials() // Refresh the list

@@ -105,6 +105,7 @@
 <script>
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { apiCall } from '../../utils/api'
 
 export default {
   name: 'ExecutionDetail',
@@ -130,10 +131,10 @@ export default {
     const fetchExecution = async () => {
       try {
         loading.value = true
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.workflow.get_workflow_execution',
-          args: { execution_id: executionId.value }
-        })
+        const response = await apiCall(
+          'spry.spry_automation.api.workflow.get_workflow_execution',
+          { execution_id: executionId.value }
+        )
         
         if (response.message) {
           execution.value = response.message
@@ -156,10 +157,10 @@ export default {
       }
 
       try {
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.workflow.stop_workflow_execution',
-          args: { execution_id: executionId.value }
-        })
+        const response = await apiCall(
+          'spry.spry_automation.api.workflow.stop_workflow_execution',
+          { execution_id: executionId.value }
+        )
         
         if (response.message && response.message.success) {
           alert('Execution stopped')

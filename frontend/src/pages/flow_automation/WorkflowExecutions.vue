@@ -119,6 +119,7 @@
 <script>
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { apiCall } from '../../utils/api'
 
 export default {
   name: 'WorkflowExecutions',
@@ -137,10 +138,10 @@ export default {
 
     const fetchWorkflowDetails = async () => {
       try {
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.workflow.get_workflow',
-          args: { name: workflowId.value }
-        })
+        const response = await apiCall(
+          'spry.spry_automation.api.workflow.get_workflow',
+          { name: workflowId.value }
+        )
 
         if (response.message) {
           workflowName.value = response.message.workflow_name
@@ -153,10 +154,10 @@ export default {
     const fetchExecutions = async () => {
       try {
         loading.value = true
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.workflow.get_workflow_executions',
-          args: { workflow_name: workflowId.value }
-        })
+        const response = await apiCall(
+          'spry.spry_automation.api.workflow.get_workflow_executions',
+          { workflow_name: workflowId.value }
+        )
         executions.value = response.message || []
       } catch (error) {
         console.error('Error fetching executions:', error)
@@ -167,10 +168,10 @@ export default {
 
     const runWorkflow = async () => {
       try {
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.workflow.execute_workflow',
-          args: { name: workflowId.value }
-        })
+        const response = await apiCall(
+          'spry.spry_automation.api.workflow.execute_workflow',
+          { name: workflowId.value }
+        )
         
         if (response.message && response.message.success) {
           alert('Workflow execution started')

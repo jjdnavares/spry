@@ -118,6 +118,7 @@
 <script>
 import { ref, onMounted, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { apiCall } from '../../utils/api'
 
 export default {
   name: 'CredentialEditor',
@@ -144,9 +145,9 @@ export default {
 
     const fetchCredentialTypes = async () => {
       try {
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.credential.get_credential_types'
-        })
+        const response = await apiCall(
+          'spry.spry_automation.api.credential.get_credential_types'
+        )
         
         credentialTypes.value = response.message || []
       } catch (error) {
@@ -163,10 +164,10 @@ export default {
       }
 
       try {
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.credential.get_credential',
-          args: { name: credentialId.value }
-        })
+        const response = await apiCall(
+          'spry.spry_automation.api.credential.get_credential',
+          { name: credentialId.value }
+        )
 
         if (response.message) {
           const credential = response.message
@@ -224,10 +225,10 @@ export default {
           credential_data: credentialData.value
         }
 
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.credential.save_credential',
-          args: { data }
-        })
+        const response = await apiCall(
+          'spry.spry_automation.api.credential.save_credential',
+          { data }
+        )
 
         if (response.message) {
           alert('Credential saved successfully')
@@ -250,12 +251,12 @@ export default {
       }
 
       try {
-        const response = await window.frappe.call({
-          method: 'spry.flow_automation.api.credential.test_credential',
-          args: { 
+        const response = await apiCall(
+          'spry.spry_automation.api.credential.test_credential',
+          { 
             name: credentialId.value
           }
-        })
+        )
         
         if (response.message && response.message.success) {
           alert('Credential test successful')

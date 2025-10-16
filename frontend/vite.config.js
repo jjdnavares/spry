@@ -21,8 +21,12 @@ export default defineConfig({
     emptyOutDir: true,
     target: 'es2015',
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'src/main.js'),
+        writer: path.resolve(__dirname, 'src/writer.js')
+      },
       output: {
-        entryFileNames: 'assets/[name].js',
+        entryFileNames: '[name].js',
         chunkFileNames: 'assets/[name].js',
         assetFileNames: 'assets/[name].[ext]'
       }

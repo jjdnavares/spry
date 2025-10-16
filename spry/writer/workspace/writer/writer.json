@@ -1,0 +1,109 @@
+{
+ "app": "spry",
+ "charts": [],
+ "content": "[{\"id\":\"writer_shortcuts\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Generated Content\",\"col\":3}},{\"id\":\"writer_shortcuts2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"LLM Settings\",\"col\":3}}]",
+ "creation": "2025-01-15 03:40:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "edit",
+ "idx": 2,
+ "is_hidden": 0,
+ "label": "Writer",
+ "links": [
+  {
+   "description": "AI-powered content generation",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Content",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Generated Content",
+   "link_count": 0,
+   "link_to": "Generated Content",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "description": "Configure LLM providers and API keys",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Settings",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "LLM Settings",
+   "link_count": 0,
+   "link_to": "LLM Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "description": "Content writer interface",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Writer App",
+   "link_count": 1,
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Writer",
+   "link_count": 0,
+   "link_to": "/writer",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-01-15 03:40:00.000000",
+ "modified_by": "Administrator",
+ "module": "Writer",
+ "name": "Writer",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [
+  {
+   "color": "Purple",
+   "doc_view": "List",
+   "label": "Generated Content",
+   "link_to": "Generated Content",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "LLM Settings",
+   "link_to": "LLM Settings",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Writer",
+ "type": "Workspace"
+}
